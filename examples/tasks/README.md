@@ -1,6 +1,7 @@
 
 
 To see:
+https://esp32tutorials.com/esp32-esp-idf-freertos-tutorial-create-tasks/
 https://www.youtube.com/watch?v=k_D_Qu0cgu8
 https://www.youtube.com/watch?v=ytRRG96cMF0
 
