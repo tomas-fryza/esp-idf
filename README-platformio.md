@@ -4,7 +4,7 @@
 
 1. Download and install [Visual Studio Code](https://code.visualstudio.com/) source code editor.
 
-2. Run Visual Studio Code application
+2. Run Visual Studio Code application:
    1. Open up the extensions viewer in menu **View > Extensions Ctrl+shift+X**.
    2. Type `platformio` into the search bar.
    3. Press **Install** button on the result `PlatformIO IDE`. It may take a few minutes depending on your connection speed. Do not close any window and do not open other folders until the installing process is completed.
@@ -15,7 +15,7 @@
 
 # Usage
 
-1. Create a new project
+1. Create a new project:
    1. Click on the PlatformIO icon in the left-hand margin.
    2. In menu **PIO Home** select **Open**.
    3. Click to **New Project** button.
@@ -29,7 +29,7 @@
 
       ![Create a new project](images/platformio_project_name.png)
 
-2. Code the application
+2. Code the application:
    1. Copy/paste the [basic template](https://raw.githubusercontent.com/tomas-fryza/esp-idf-thingspeak/main/examples/gpio/src/main.c) to your `GPIO > src > main.c` file.
    2. Add the following settings to `platformio.ini` project configuration file.
 
