@@ -33,16 +33,16 @@
    1. Copy/paste the [basic template](https://raw.githubusercontent.com/tomas-fryza/esp-idf-thingspeak/main/examples/gpio/src/main.c) to your `GPIO > src > main.c` file.
    2. Add the following settings to `platformio.ini` project configuration file.
 
-```bash
-monitor_speed = 115200
+      ```bash
+      monitor_speed = 115200
 
-# DTR & RTS settings of the serial monitor must be OFF
-monitor_rts = 0
-monitor_dtr = 0
+      # DTR & RTS settings of the serial monitor must be OFF
+      monitor_rts = 0
+      monitor_dtr = 0
 
-# Enable ANSI color codes in serial monitor
-monitor_raw = yes
-```
+      # Enable ANSI color codes in serial monitor
+      monitor_raw = yes
+      ```
 
    3. Connect your ESP32 board to USB port.
 
