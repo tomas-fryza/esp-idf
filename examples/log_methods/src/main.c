@@ -8,19 +8,27 @@
    This work is licensed under the terms of the GNU GENERAL PUBLIC LICENSE.
  */
 
+
+/*-----------------------------------------------------------*/
 #include <stdio.h>              // Needed for "printf" function
 #include <esp_log.h>            // ESP_LOG/E/W/I functions
 #include <freertos/FreeRTOS.h>  // FreeRTOS
 #include <freertos/task.h>      // vTaskDelay, portTICK_PERIOD_MS
 #include <driver/gpio.h>        // GPIO pins
 
+
+/*-----------------------------------------------------------*/
 // ESP32-CAM on-board LED(s): #33 (red, bottom side), #4 (Flash, top side)
 #define BUILT_IN_LED 33
 
+
+/*-----------------------------------------------------------*/
 /* In ESP-IDF instead of "main", we use "app_main" function
    where the program execution begins */
 void app_main()
 {
+    uint8_t led_state = 0;
+
     // Standard output to serial monitor
     printf("\nHi, there!\n");
 
@@ -34,20 +42,18 @@ void app_main()
     ESP_LOGE("setup", "this is Error logging");
     ESP_LOGW("setup", "this is Warning logging");
     ESP_LOGI("setup", "this is Info logging");
-    ESP_LOGD("setup", "this is Debug logging");
-    ESP_LOGV("setup", "this is Verbose logging");
 
     // Pin(s) configuration
+    gpio_reset_pin(BUILT_IN_LED);
     gpio_set_direction(BUILT_IN_LED, GPIO_MODE_OUTPUT);
-    ESP_LOGI("gpio", "pin #%d configured as output", BUILT_IN_LED);
+    ESP_LOGI("gpio", "gpio configured to blink LED");
 
     // Forever loop
     while (1) {
-        gpio_set_level(BUILT_IN_LED, 1);        // Set high level
-        vTaskDelay(1000 / portTICK_PERIOD_MS);  // Delay 1 second
-
-        gpio_set_level(BUILT_IN_LED, 0);        // Set low level
-        vTaskDelay(1000 / portTICK_PERIOD_MS);  // Delay 1 second
+        led_state = !led_state;                   // Toggle LED
+        gpio_set_level(BUILT_IN_LED, led_state);  // Update LED
+        ESP_LOGI("gpio", "turning LED %s", led_state == 0 ? "ON" : "OFF");
+        vTaskDelay(1000 / portTICK_PERIOD_MS);    // Delay 1 second
     }
 
     // Will never reach this
