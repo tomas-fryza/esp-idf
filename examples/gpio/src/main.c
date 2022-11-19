@@ -8,21 +8,26 @@
    This work is licensed under the terms of the GNU GENERAL PUBLIC LICENSE.
  */
 
-#include <stdio.h>              // Needed for "printf" function
+
+/*-----------------------------------------------------------*/
 #include <freertos/FreeRTOS.h>  // FreeRTOS
 #include <freertos/task.h>      // vTaskDelay, portTICK_PERIOD_MS
 #include <driver/gpio.h>        // GPIO pins
 
+
+/*-----------------------------------------------------------*/
 // ESP32-CAM on-board LED(s): #33 (red, bottom side), #4 (Flash, top side)
 #define BUILT_IN_LED 33
 
+
+/*-----------------------------------------------------------*/
 /* In ESP-IDF instead of "main", we use "app_main" function
    where the program execution begins */
 void app_main()
 {
     // Pin(s) configuration
+    gpio_reset_pin(BUILT_IN_LED);
     gpio_set_direction(BUILT_IN_LED, GPIO_MODE_OUTPUT);
-    printf("pin #%d configured as output\n", BUILT_IN_LED);
 
     // Forever loop
     while (1) {
