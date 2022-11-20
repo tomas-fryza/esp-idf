@@ -90,7 +90,7 @@ void vTaskI2CScanner()
         ESP_LOGI("i2c", "0x%02x", sla);
 
         // Send all the queued commands on the I2C bus, in master mode
-        if (i2c_master_cmd_begin(I2C_NUM_0, cmd, 1000 / portTICK_RATE_MS) == ESP_OK) {
+        if (i2c_master_cmd_begin(I2C_NUM_0, cmd, (1000/portTICK_RATE_MS)) == ESP_OK) {
             ESP_LOGI("i2c", "found device with address 0x%02x", sla);
             devices_found++;
         }
