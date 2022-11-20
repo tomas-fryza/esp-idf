@@ -2,7 +2,7 @@ Some useful commands for git that are good to remember.
 
 | **Command** | **Example** | **Description** |
 | :-: | :-- | :-- |
-| `clone`  | `git clone https://github.com/tomas-fryza/esp-idf-thingspeak` | Create a local copy of a remote repository |
+| `clone`  | `git clone https://github.com/tomas-fryza/esp-idf` | Create a local copy of a remote repository |
 | `pull`   | `git pull` | Update local repository and working folder to the newest commit |
 | `status` | `git status` | Display the state of the working directory and the staging area |
 |          | `git status -s` | Give the output in the short-format |
