@@ -33,6 +33,8 @@ void vTaskRandom();
    where the program execution begins */
 void app_main()
 {
+    ESP_LOGI("setup", "task application");
+
     xTaskCreate(vTaskBlink, "Task 1", 2048, NULL, 5, NULL);
     xTaskCreate(vTaskRandom, "Task 2", 2048, NULL, 5, NULL);
 }

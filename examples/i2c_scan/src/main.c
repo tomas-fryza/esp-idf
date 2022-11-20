@@ -23,7 +23,7 @@
 //   * GND GND RTC     *
 //   * 12              * 0    --+ Programming jumper
 //   * 13  SDA RTC     * GND  --+
-//   * 15  SCL RTC     *
+//   * 15  SCL RTC     * VCC
 //   * 14              * U0R  Arduino Rx
 //   * 2               * U0T  Arduino Tx
 //   * 4               * GND  Arduino
@@ -47,6 +47,8 @@ void vTaskLoop();
    where the program execution begins */
 void app_main(void)
 {
+    ESP_LOGI("setup", "i2c scan application");
+
     // Configure i2c controller in master mode
     i2c_config_t conf = {
         .mode = I2C_MODE_MASTER,
