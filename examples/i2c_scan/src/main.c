@@ -14,13 +14,26 @@
 #include <freertos/FreeRTOS.h>  // FreeRTOS
 #include <freertos/task.h>
 #include <esp_log.h>            // ESP_LOG/E/W/I functions
-#include <esp_err.h>            // Error library
+//#include <esp_err.h>            // Error library
 #include <driver/i2c.h>         // Inter-Integrated Circuit driver
 
 
 /*-----------------------------------------------------------*/
-#define I2C_MASTER_SDA_IO 12
-#define I2C_MASTER_SCL_IO 13
+//        ESP32-CAM
+//   * 5V  Arduino     * 3.3V VCC RTC
+//   * GND GND RTC     *
+//   * 12              * 0    --+ Programming jumper
+//   * 13  SDA RTC     * GND  --+
+//   * 15  SCL RTC     *
+//   * 14              * U0R  Arduino Rx
+//   * 2               * U0T  Arduino Tx
+//   * 4               * GND  Arduino
+//
+//        Arduino Uno
+//   Reset  --+ Jumper
+//   GND    --+
+#define I2C_MASTER_SDA_IO 13  // ESP32-CAM
+#define I2C_MASTER_SCL_IO 15
 #define I2C_MASTER_FREQ_HZ 100000
 
 
@@ -35,7 +48,7 @@ void vTaskLoop();
    where the program execution begins */
 void app_main(void)
 {
-    // Configure i2c controller 0 in master mode, normal speed
+    // Configure i2c controller in master mode
     i2c_config_t conf = {
         .mode = I2C_MODE_MASTER,
         .sda_io_num = I2C_MASTER_SDA_IO,
@@ -44,7 +57,7 @@ void app_main(void)
         .scl_pullup_en = GPIO_PULLUP_ENABLE,
         .master.clk_speed = I2C_MASTER_FREQ_HZ,
     };
-	ESP_ERROR_CHECK(i2c_param_config(I2C_NUM_0, &conf));
+	i2c_param_config(I2C_NUM_0, &conf);
 	ESP_LOGI("i2c", "i2c controller configured");
 
 	// Install i2c driver
@@ -75,6 +88,8 @@ void vTaskI2CScanner()
         // Queue a "STOP" signal to a list
         i2c_master_stop(cmd);
 
+        ESP_LOGI("i2c", "0x%02x", sla);
+
         // Send all the queued commands on the I2C bus, in master mode
 		if (i2c_master_cmd_begin(I2C_NUM_0, cmd, 1000 / portTICK_RATE_MS) == ESP_OK) {
 			ESP_LOGI("i2c", "found device with address 0x%02x", sla);
@@ -83,6 +98,8 @@ void vTaskI2CScanner()
 
         // Free the I2C commands list
 		i2c_cmd_link_delete(cmd);
+
+        vTaskDelay(25 / portTICK_PERIOD_MS);  // 25 milliseconds
 	}
 	ESP_LOGI("i2c", "...scan completed!");
     ESP_LOGI("i2c", "#%d device(s) found", devices_found);
