@@ -14,7 +14,6 @@
 #include <freertos/FreeRTOS.h>  // FreeRTOS
 #include <freertos/task.h>
 #include <esp_log.h>            // ESP_LOG/E/W/I functions
-//#include <esp_err.h>            // Error library
 #include <driver/i2c.h>         // Inter-Integrated Circuit driver
 
 
@@ -57,12 +56,12 @@ void app_main(void)
         .scl_pullup_en = GPIO_PULLUP_ENABLE,
         .master.clk_speed = I2C_MASTER_FREQ_HZ,
     };
-	i2c_param_config(I2C_NUM_0, &conf);
-	ESP_LOGI("i2c", "i2c controller configured");
+    i2c_param_config(I2C_NUM_0, &conf);
+    ESP_LOGI("i2c", "i2c controller configured");
 
-	// Install i2c driver
-	i2c_driver_install(I2C_NUM_0, I2C_MODE_MASTER, 0, 0, 0);
-	ESP_LOGI("i2c", "i2c driver installed");
+    // Install i2c driver
+    i2c_driver_install(I2C_NUM_0, I2C_MODE_MASTER, 0, 0, 0);
+    ESP_LOGI("i2c", "i2c driver installed");
 
     // Start the i2c scanner task
     xTaskCreate(vTaskI2CScanner, "i2c_scanner", 2048, NULL, 5, NULL);
@@ -74,34 +73,34 @@ void vTaskI2CScanner()
 {
     uint8_t devices_found = 0;
 
-	ESP_LOGI("i2c", "scanning the bus...");
-	for (uint8_t sla = 8; sla < 119; sla++) {
-		// Create the i2c commands list
-		i2c_cmd_handle_t cmd = i2c_cmd_link_create();
+    ESP_LOGI("i2c", "scanning the bus...");
+    for (uint8_t sla = 8; sla < 119; sla++) {
+        // Create the i2c commands list
+        i2c_cmd_handle_t cmd = i2c_cmd_link_create();
 
         // Queue a "START" signal to a list
-		i2c_master_start(cmd);
+        i2c_master_start(cmd);
 
         // Slave address to write data
-		i2c_master_write_byte(cmd, (sla<<1) | I2C_MASTER_WRITE, true);
-		
+        i2c_master_write_byte(cmd, (sla<<1) | I2C_MASTER_WRITE, true);
+
         // Queue a "STOP" signal to a list
         i2c_master_stop(cmd);
 
         ESP_LOGI("i2c", "0x%02x", sla);
 
         // Send all the queued commands on the I2C bus, in master mode
-		if (i2c_master_cmd_begin(I2C_NUM_0, cmd, 1000 / portTICK_RATE_MS) == ESP_OK) {
-			ESP_LOGI("i2c", "found device with address 0x%02x", sla);
-			devices_found++;
-		}
+        if (i2c_master_cmd_begin(I2C_NUM_0, cmd, 1000 / portTICK_RATE_MS) == ESP_OK) {
+            ESP_LOGI("i2c", "found device with address 0x%02x", sla);
+            devices_found++;
+        }
 
         // Free the I2C commands list
-		i2c_cmd_link_delete(cmd);
+        i2c_cmd_link_delete(cmd);
 
         vTaskDelay(25 / portTICK_PERIOD_MS);  // 25 milliseconds
-	}
-	ESP_LOGI("i2c", "...scan completed!");
+    }
+    ESP_LOGI("i2c", "...scan completed!");
     ESP_LOGI("i2c", "#%d device(s) found", devices_found);
 
     // Start the loop task
