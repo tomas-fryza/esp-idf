@@ -48,11 +48,22 @@ void getHumid();
 
 
 /*-----------------------------------------------------------*/
+// Declaration of "air" variable with structure "Air_parameters_structure"
+struct Air_parameters_structure {
+    uint8_t humidInt;
+    uint8_t humidDec;
+    uint8_t tempInt;
+    uint8_t tempDec;
+    uint8_t checksum;
+} air;
+
+
+/*-----------------------------------------------------------*/
 /* In ESP-IDF instead of "main", we use "app_main" function
    where the program execution begins */
 void app_main(void)
 {
-    ESP_LOGI("setup", "i2c sensor");
+    ESP_LOGI("setup", "i2c sensor application");
 
     // Configure i2c controller in master mode
     i2c_config_t conf = {
@@ -84,8 +95,11 @@ void vTaskLoop()
     while (1) {
         getTemp();
         getHumid();
-        // Delay 1 second
-        vTaskDelay(1000 / portTICK_PERIOD_MS);
+        ESP_LOGI("i2c", "temperature: %d.%d °C", air.tempInt, air.tempDec);
+        ESP_LOGI("i2c", "humidity: %d.%d", air.humidInt, air.humidDec);
+
+        // Delay 3 seconds
+        vTaskDelay(3000 / portTICK_PERIOD_MS);
     }
 
     // Delete this task if it exits from the loop above
@@ -96,9 +110,6 @@ void vTaskLoop()
 /*-----------------------------------------------------------*/
 void getTemp()
 {
-    uint8_t tempInt;
-    uint8_t tempDec;
-
     // Create and execute i2c commands list
     i2c_cmd_handle_t cmd = i2c_cmd_link_create();
     i2c_master_start(cmd);
@@ -106,22 +117,17 @@ void getTemp()
     i2c_master_write_byte(cmd, I2C_DHT_TEMP, true);
     i2c_master_start(cmd);
     i2c_master_write_byte(cmd, (I2C_DHT_ADDRESS<<1) | I2C_MASTER_READ, true);
-    i2c_master_read_byte(cmd, &tempInt, I2C_ACK);
-    i2c_master_read_byte(cmd, &tempDec, I2C_NACK);
+    i2c_master_read_byte(cmd, &air.tempInt, I2C_ACK);
+    i2c_master_read_byte(cmd, &air.tempDec, I2C_NACK);
     i2c_master_stop(cmd);
     i2c_master_cmd_begin(I2C_NUM_0, cmd, (1000/portTICK_RATE_MS));
     i2c_cmd_link_delete(cmd);
-
-    ESP_LOGI("i2c", "temperature: %d.%d °C", tempInt, tempDec);
 }
 
 
 /*-----------------------------------------------------------*/
 void getHumid()
 {
-    uint8_t humidInt;
-    uint8_t humidDec;
-
     // Create and execute i2c commands list
     i2c_cmd_handle_t cmd = i2c_cmd_link_create();
     i2c_master_start(cmd);
@@ -129,11 +135,9 @@ void getHumid()
     i2c_master_write_byte(cmd, I2C_DHT_HUMID, true);
     i2c_master_start(cmd);
     i2c_master_write_byte(cmd, (I2C_DHT_ADDRESS<<1) | I2C_MASTER_READ, true);
-    i2c_master_read_byte(cmd, &humidInt, I2C_ACK);
-    i2c_master_read_byte(cmd, &humidDec, I2C_NACK);
+    i2c_master_read_byte(cmd, &air.humidInt, I2C_ACK);
+    i2c_master_read_byte(cmd, &air.humidDec, I2C_NACK);
     i2c_master_stop(cmd);
     i2c_master_cmd_begin(I2C_NUM_0, cmd, (1000/portTICK_RATE_MS));
     i2c_cmd_link_delete(cmd);
-
-    ESP_LOGI("i2c", "humidity: %d.%d", humidInt, humidDec);
 }
