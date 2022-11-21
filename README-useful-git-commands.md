@@ -22,9 +22,9 @@
 
 ![git](images/git_basics.png)
 
-## Useful settings
-
 A detailed description of all git commands can be found [here](https://github.com/joshnh/Git-Commands).
+
+## Useful settings
 
 Setting username and email for a single repository:
 
