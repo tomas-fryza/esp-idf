@@ -46,7 +46,7 @@
 
    3. Connect your ESP32 board to USB port.
 
-   4. Compile and upload the code. The handy shortcuts for building and uploading the code is available on the blue footer taskbar. Hover over the icon to get its functionality. Firts, compile (build) the project and then upload it to ESP32 board. Open the Serial monitor. (At some platforms you have to press on-board reset button.)
+   4. Compile and upload the code. The handy shortcuts for building and uploading the code is available on the blue footer taskbar. Hover over the icon to get its functionality. First, compile (build) the project and then upload it to ESP32 board. Open the Serial monitor. (At some platforms you have to press on-board reset button.)
 
       ![Control icons](images/platformio_footer2.png)
 
