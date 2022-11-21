@@ -1,4 +1,4 @@
-Some useful commands for git that are good to remember.
+# Useful git commands to remember
 
 | **Command** | **Example** | **Description** |
 | :-: | :-- | :-- |
@@ -20,20 +20,27 @@ Some useful commands for git that are good to remember.
 |            | `git checkout -b <new_branch>` | Switch to new branch |
 |            | `git checkout master` <br /> `git merge <existing_branch>` | Update main branch with branch's changes |
 
+![git](images/git_basics.png)
+
+## Useful settings
+
 A detailed description of all git commands can be found [here](https://github.com/joshnh/Git-Commands).
 
 Setting username and email for a single repository:
+
 ```shell
 $ git config user.name "your-git-user-name"
 $ git config user.email "your-email@address.com"
 ```
 
 List global git parameters:
+
 ```shell
 $ git config --global --list
 ```
 
 Clear global username/email:
+
 ```shell
 $ git config --global --unset-all user.name
 $ git config --global --unset-all user.email
