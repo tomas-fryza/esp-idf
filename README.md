@@ -12,7 +12,7 @@
 - [x] [Tasks](examples/tasks)
 - [x] [I2C scanner](examples/i2c_scan)
 - [x] [I2C communication with DHT12 sensor](examples/i2c_sensor)
-- [ ] Get requests
+- [ ] HTTP GET requests
 
 ## References
 
