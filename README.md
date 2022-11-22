@@ -2,8 +2,17 @@
 
 ## Instructions
 
-* [Installation and first project](README-platformio.md)
+* [Installation and first ESP-IDF project](README-platformio.md)
 * [Git commands](README-useful-git-commands.md)
+
+## Examples
+
+- [x] Gpio
+- [x] Logging mothods
+- [x] Tasks
+- [x] I2c scanner
+- [x] I2c communication with DHT12 sensor
+- [] Get requests
 
 ## References
 
