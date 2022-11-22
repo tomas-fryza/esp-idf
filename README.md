@@ -8,7 +8,7 @@
 ## Examples
 
 - [x] [Basic template with GPIO](examples/gpio)
-- [x] [Logging mothods](examples/log_methods)
+- [x] [Logging methods](examples/log_methods)
 - [x] [Tasks](examples/tasks)
 - [x] [I2C scanner](examples/i2c_scan)
 - [x] [I2C communication with DHT12 sensor](examples/i2c_sensor)
