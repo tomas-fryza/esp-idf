@@ -7,12 +7,12 @@
 
 ## Examples
 
-- [x] Gpio
-- [x] Logging mothods
-- [x] Tasks
-- [x] I2c scanner
-- [x] I2c communication with DHT12 sensor
-- [] Get requests
+- [x] [Basic template with GPIO](examples/gpio)
+- [x] [Logging mothods](examples/log_methods)
+- [x] [Tasks](examples/tasks)
+- [x] [I2C scanner](examples/i2c_scan)
+- [x] [I2c communication with DHT12 sensor](examples/sensor)
+- [ ] Get requests
 
 ## References
 
