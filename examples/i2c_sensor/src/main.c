@@ -1,5 +1,6 @@
 /*
    Read temperature and humidity from DHT12 sensor, SLA = 0x5c.
+
    Xtensa dual-core 32-bit LX6 (ESP32-CAM), 240 MHz
    PlatformIO, ESP-IDF framework
 
