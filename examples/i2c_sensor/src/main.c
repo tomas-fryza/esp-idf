@@ -98,8 +98,8 @@ void vTaskLoop()
         ESP_LOGI("i2c", "temperature: %d.%d °C", air.tempInt, air.tempDec);
         ESP_LOGI("i2c", "humidity: %d.%d", air.humidInt, air.humidDec);
 
-        // Delay 3 seconds
-        vTaskDelay(3000 / portTICK_PERIOD_MS);
+        // Delay 5 seconds
+        vTaskDelay(5000 / portTICK_PERIOD_MS);
     }
 
     // Delete this task if it exits from the loop above
