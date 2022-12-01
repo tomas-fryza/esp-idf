@@ -31,8 +31,10 @@
 //        Arduino Uno
 //   Reset  --+ Jumper
 //   GND    --+
-#define I2C_MASTER_SDA_IO 13  // ESP32-CAM
-#define I2C_MASTER_SCL_IO 15
+//
+// ESP32-CAM: SDA #13, SCL #15
+#define I2C_MASTER_SDA_IO 21
+#define I2C_MASTER_SCL_IO 22
 #define I2C_MASTER_FREQ_HZ 100000
 #define I2C_ACK 0x0
 #define I2C_NACK 0x1

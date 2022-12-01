@@ -19,7 +19,8 @@
 
 /*-----------------------------------------------------------*/
 // ESP32-CAM on-board LED(s): #33 (red, bottom side), #4 (Flash, top side)
-#define BUILT_IN_LED 33
+// DFRobot FireBeetle ESP32: #2
+#define BUILT_IN_LED 2
 
 
 /*-----------------------------------------------------------*/
