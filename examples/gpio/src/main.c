@@ -16,8 +16,10 @@
 
 
 /*-----------------------------------------------------------*/
-// ESP32-CAM on-board LED(s): #33 (red, bottom side), #4 (Flash, top side)
-#define BUILT_IN_LED 33
+// On-board LED(s):
+// FireBeetle : #2 (blue)
+// ESP32-CAM  : #33 (red, bottom side), #4 (Flash, top side)
+#define BUILT_IN_LED 2
 
 
 /*-----------------------------------------------------------*/
@@ -32,7 +34,7 @@ void app_main()
     // Forever loop
     while (1) {
         gpio_set_level(BUILT_IN_LED, 1);        // Set high level
-        vTaskDelay(1000 / portTICK_PERIOD_MS);  // Delay 1 second
+        vTaskDelay(100 / portTICK_PERIOD_MS);   // Delay 100 milliseconds
 
         gpio_set_level(BUILT_IN_LED, 0);        // Set low level
         vTaskDelay(1000 / portTICK_PERIOD_MS);  // Delay 1 second
