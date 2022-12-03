@@ -27,8 +27,10 @@
    where the program execution begins */
 void app_main()
 {
-    // Pin(s) configuration
+    /* Reset an gpio to default state (enable pullup, disable
+       interrupts, ...) */
     gpio_reset_pin(BUILT_IN_LED);
+    // Set output
     gpio_set_direction(BUILT_IN_LED, GPIO_MODE_OUTPUT);
 
     // Forever loop
