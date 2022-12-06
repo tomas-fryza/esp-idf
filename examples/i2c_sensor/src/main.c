@@ -48,6 +48,7 @@
 void vTaskLoop();
 void getTemp();
 void getHumid();
+void getAllValues();
 
 
 /*-----------------------------------------------------------*/
@@ -96,10 +97,14 @@ void vTaskLoop()
 
     // Forever loop
     while (1) {
-        getTemp();
-        getHumid();
+        // getTemp();
+        // vTaskDelay(20 / portTICK_PERIOD_MS);
+        // getHumid();
+        // vTaskDelay(20 / portTICK_PERIOD_MS);
+        getAllValues();
         ESP_LOGI("i2c", "temperature: %d.%d °C", air.tempInt, air.tempDec);
         ESP_LOGI("i2c", "humidity: %d.%d", air.humidInt, air.humidDec);
+        ESP_LOGI("i2c", "checksum: %d", air.checksum);
 
         // Delay 5 seconds
         vTaskDelay(5000 / portTICK_PERIOD_MS);
@@ -123,7 +128,7 @@ void getTemp()
     i2c_master_read_byte(cmd, &air.tempInt, I2C_ACK);
     i2c_master_read_byte(cmd, &air.tempDec, I2C_NACK);
     i2c_master_stop(cmd);
-    i2c_master_cmd_begin(I2C_NUM_0, cmd, (1000/portTICK_RATE_MS));
+    i2c_master_cmd_begin(I2C_NUM_0, cmd, (1000 / portTICK_RATE_MS));
     i2c_cmd_link_delete(cmd);
 }
 
@@ -141,6 +146,27 @@ void getHumid()
     i2c_master_read_byte(cmd, &air.humidInt, I2C_ACK);
     i2c_master_read_byte(cmd, &air.humidDec, I2C_NACK);
     i2c_master_stop(cmd);
-    i2c_master_cmd_begin(I2C_NUM_0, cmd, (1000/portTICK_RATE_MS));
+    i2c_master_cmd_begin(I2C_NUM_0, cmd, (1000 / portTICK_RATE_MS));
+    i2c_cmd_link_delete(cmd);
+}
+
+
+/*-----------------------------------------------------------*/
+void getAllValues()
+{
+    // Create and execute i2c commands list
+    i2c_cmd_handle_t cmd = i2c_cmd_link_create();
+    i2c_master_start(cmd);
+    i2c_master_write_byte(cmd, (I2C_DHT_ADDRESS<<1) | I2C_MASTER_WRITE, true);
+    i2c_master_write_byte(cmd, I2C_DHT_HUMID, true);
+    i2c_master_start(cmd);
+    i2c_master_write_byte(cmd, (I2C_DHT_ADDRESS<<1) | I2C_MASTER_READ, true);
+    i2c_master_read_byte(cmd, &air.humidInt, I2C_ACK);
+    i2c_master_read_byte(cmd, &air.humidDec, I2C_ACK);
+    i2c_master_read_byte(cmd, &air.tempInt, I2C_ACK);
+    i2c_master_read_byte(cmd, &air.tempDec, I2C_ACK);
+    i2c_master_read_byte(cmd, &air.checksum, I2C_NACK);
+    i2c_master_stop(cmd);
+    i2c_master_cmd_begin(I2C_NUM_0, cmd, (1000 / portTICK_RATE_MS));
     i2c_cmd_link_delete(cmd);
 }
