@@ -1,6 +1,6 @@
 /*
    Blink a LED.
-   Xtensa dual-core 32-bit LX6 (ESP32-CAM), 240 MHz
+   Xtensa dual-core 32-bit LX6 (ESP32-CAM, FireBeetle ESP32), 240 MHz
    PlatformIO, ESP-IDF framework
 
    Copyright (c) 2022 Tomas Fryza
@@ -17,8 +17,8 @@
 
 /*-----------------------------------------------------------*/
 // On-board LED(s):
-// FireBeetle : #2 (blue)
 // ESP32-CAM  : #33 (red, bottom side), #4 (Flash, top side)
+// FireBeetle : #2 (blue)
 #define BUILT_IN_LED 2
 
 
