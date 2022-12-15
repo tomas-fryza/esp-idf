@@ -14,7 +14,7 @@ ESP-IDF is Espressif's official [IoT Development Framework](https://www.espressi
 - [x] [Logging methods](examples/log_methods)
 - [x] [Tasks](examples/tasks)
 - [x] [I2C scan](examples/i2c_scan)
-- [x] [I2C communication with DHT12 sensor](examples/i2c_sensor)
+- [x] [I2C DHT12 sensor](examples/i2c_sensor)
 - [x] [Wi-Fi APs scan](examples/wifi_scan)
 - [x] [Wi-Fi GET requests to HTTP](examples/wifi_get_requests/)
 - [ ] Wi-Fi & DHT12 & ThingSpeak
