@@ -137,6 +137,50 @@ esp_err_t http_event_handler(esp_http_client_event_handle_t evt)
 
 
 /*-----------------------------------------------------------*/
+void wifi_init_sta()
+{
+    // See: https://docs.espressif.com/projects/esp-idf/en/latest/esp32/api-guides/wifi.html#esp32-wi-fi-station-general-scenario
+
+    // 1 - Wi-Fi/LwIP init phase (LwIP is a lightweight TCP/IP stack)
+    esp_netif_init();
+    esp_event_loop_create_default();
+    esp_netif_create_default_wifi_sta();
+
+   wifi_init_config_t cfg = WIFI_INIT_CONFIG_DEFAULT();
+    esp_wifi_init(&cfg);
+
+    // 2 - Wi-Fi Configuration Phase
+    esp_event_handler_instance_t instance_any_id;
+    esp_event_handler_instance_t instance_got_ip;
+
+    esp_event_handler_instance_register(WIFI_EVENT, ESP_EVENT_ANY_ID,
+        &event_handler, NULL, &instance_any_id);
+    esp_event_handler_instance_register(IP_EVENT, IP_EVENT_STA_GOT_IP,
+        &event_handler, NULL, &instance_got_ip);
+
+    wifi_config_t wifi_config = {
+        .sta = {
+            .ssid = WIFI_SSID,
+            .password = WIFI_PASS,
+            // .threshold.authmode = ESP_WIFI_SCAN_AUTH_MODE_THRESHOLD,
+            // .sae_pwe_h2e = WPA3_SAE_PWE_BOTH,
+        }
+    };
+    ESP_ERROR_CHECK(esp_wifi_set_mode(WIFI_MODE_STA));
+    ESP_ERROR_CHECK(esp_wifi_set_config(WIFI_IF_STA, &wifi_config));
+
+    // 3 - Wi-Fi Start Phase
+    esp_wifi_start();
+
+    // 4- Wi-Fi Connect Phase
+    // esp_wifi_connect();
+
+    // Delay 5 seconds
+    // vTaskDelay(5000 / portTICK_PERIOD_MS);
+}
+
+
+/*-----------------------------------------------------------*/
 void HttpClientTask()
 {
     esp_http_client_config_t config = {
