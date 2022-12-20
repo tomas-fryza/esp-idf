@@ -19,6 +19,8 @@ ESP-IDF is Espressif's official [IoT Development Framework](https://www.espressi
 - [x] [Wi-Fi GET requests to HTTP](examples/wifi_get_requests/)
 - [ ] Wi-Fi & DHT12 & ThingSpeak
 - [ ] Timer(s)
+- [ ] SPI
+- [ ] Bluetooth
 
 ## References
 
