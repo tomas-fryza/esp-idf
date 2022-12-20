@@ -8,7 +8,7 @@ ESP-IDF is Espressif's official [IoT Development Framework](https://www.espressi
 * [PlatformIO installation and first ESP-IDF project](README-platformio.md)
 * [Git commands](README-useful-git-commands.md)
 
-## Examples
+## Examples (PlatformIO)
 
 - [x] [Basic template with GPIO](examples/gpio)
 - [x] [Logging methods](examples/log_methods)
