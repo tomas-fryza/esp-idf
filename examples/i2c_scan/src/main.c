@@ -18,21 +18,8 @@
 
 
 /*-----------------------------------------------------------*/
-//        ESP32-CAM
-//   * 5V  Arduino     * 3.3V VCC RTC
-//   * GND GND RTC     *
-//   * 12              * 0    --+ Programming jumper
-//   * 13  SDA RTC     * GND  --+
-//   * 15  SCL RTC     * VCC
-//   * 14              * U0R  Arduino Rx
-//   * 2               * U0T  Arduino Tx
-//   * 4               * GND  Arduino
-//
-//        Arduino Uno
-//   Reset  --+ Jumper
-//   GND    --+
-#define I2C_MASTER_SDA_IO 13  // ESP32-CAM
-#define I2C_MASTER_SCL_IO 15
+#define I2C_MASTER_SDA_IO 21
+#define I2C_MASTER_SCL_IO 22
 #define I2C_MASTER_FREQ_HZ 100000
 
 
@@ -103,7 +90,7 @@ void vTaskI2CScanner()
         vTaskDelay(25 / portTICK_PERIOD_MS);  // 25 milliseconds
     }
     ESP_LOGI("i2c", "...scan completed!");
-    ESP_LOGI("i2c", "#%d device(s) found", devices_found);
+    ESP_LOGI("i2c", "%d device(s) found", devices_found);
 
     // Start the loop task
     xTaskCreate(vTaskLoop, "forever_loop", 2048, NULL, 5, NULL);
