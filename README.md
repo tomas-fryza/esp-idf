@@ -5,8 +5,8 @@ ESP-IDF is Espressif's official [IoT Development Framework](https://www.espressi
 ## Instructions
 
 * [ESP32 brief overview](https://www.youtube.com/watch?v=DoctWoxIaH8)
-* [PlatformIO installation and first ESP-IDF project](README-platformio.md)
-* [Git commands](README-useful-git-commands.md)
+* [PlatformIO installation and first ESP-IDF project](docs/README-platformio.md)
+* [Git commands](docs/README-useful-git-commands.md)
 - [ ] How to program ESP32-CAM board via Arduino Uno
 
 ## Examples (PlatformIO)
@@ -17,8 +17,8 @@ ESP-IDF is Espressif's official [IoT Development Framework](https://www.espressi
 - [x] [I2C scan](examples/i2c_scan)
 - [x] [I2C DHT12 sensor](examples/i2c_sensor)
 - [x] [Wi-Fi APs scan](examples/wifi_scan)
-- [x] [Wi-Fi GET requests to HTTP](examples/wifi_get_requests/)
-- [ ] Wi-Fi & DHT12 & ThingSpeak
+- [x] [Wi-Fi GET requests to HTTP](examples/wifi_get_requests)
+- [x] [Wi-Fi & DHT12 & ThingSpeak](examples/wifi_thingspeak)
 - [ ] Timer(s)
 - [ ] SPI
 - [ ] Bluetooth
