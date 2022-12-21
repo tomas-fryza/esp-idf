@@ -5,7 +5,7 @@ ESP-IDF is Espressif's official [IoT Development Framework](https://www.espressi
 ## Instructions
 
 * [ESP32 brief overview](https://www.youtube.com/watch?v=DoctWoxIaH8)
-* [PlatformIO installation and first ESP-IDF project](docs/README-platformio.md)
+* [PlatformIO installation and the first ESP-IDF project](docs/README-platformio.md)
 * [Git commands](docs/README-useful-git-commands.md)
 - [ ] Pinout of ESP32-CAM board
 - [ ] Pinout of FireBeetle board
