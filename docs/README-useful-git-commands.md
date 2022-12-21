@@ -8,7 +8,7 @@
 |          | `git status -s` | Give the output in the short-format |
 | `add`    | `git add main.c` | Add `main.c` file to the staging area |
 |          | `git add -A` | Add all new and changed files to the staging area |
-| `commit` | `git commit -m "[LAB] Changed parameter F_CPU to 1MHz"` | Commit changes, i.e. record changes to the local repository
+| `commit` | `git commit -m "README files moved to docs/ folder"` | Commit changes, i.e. record changes to the local repository
 | `push`   | `git push` | Push changes to remote repository |
 | `fetch` | `git fetch` | Downloads new data from a remote repository to local repository but doesn't integrate into working files |
 | `merge` | `git merge` | Approves merge changes with local repository |
@@ -20,7 +20,7 @@
 |            | `git checkout -b <new_branch>` | Switch to new branch |
 |            | `git checkout master` <br /> `git merge <existing_branch>` | Update main branch with branch's changes |
 
-![git](images/git_basics.png)
+![git](../images/git_basics.png)
 
 A detailed description of all git commands can be found [here](https://github.com/joshnh/Git-Commands).
 
