@@ -45,21 +45,21 @@
 
 /*-----------------------------------------------------------*/
 // Used function(s)
-void vTaskLoop();
-void getTemp();
-void getHumid();
-void getAllValues();
+void dht_sensor_task();
+void dht_get_temp();
+void dht_get_humid();
+void dht_get_all_values();
 
 
 /*-----------------------------------------------------------*/
-// Declaration of "air" variable with structure "Air_parameters_structure"
-struct Air_parameters_structure {
+// Declaration of "dht12" variable with structure "DHT_values_structure"
+struct DHT_values_structure {
     uint8_t humidInt;
     uint8_t humidDec;
     uint8_t tempInt;
     uint8_t tempDec;
     uint8_t checksum;
-} air;
+} dht12;
 
 
 /*-----------------------------------------------------------*/
@@ -85,26 +85,26 @@ void app_main(void)
     i2c_driver_install(I2C_NUM_0, I2C_MODE_MASTER, 0, 0, 0);
     ESP_LOGI("i2c", "i2c driver installed");
 
-    // Start the loop task
-    xTaskCreate(vTaskLoop, "forever_loop", 2048, NULL, 5, NULL);
+    // Start I2C sensor task
+    xTaskCreate(dht_sensor_task, "read_sensor_values", 2048, NULL, 5, NULL);
 }
 
 
 /*-----------------------------------------------------------*/
-void vTaskLoop()
+void dht_sensor_task()
 {
-    ESP_LOGI("task", "loop task started");
+    ESP_LOGI("task", "DHT sensor task started");
 
     // Forever loop
     while (1) {
-        // getTemp();
+        // dht_get_temp();
         // vTaskDelay(20 / portTICK_PERIOD_MS);
-        // getHumid();
+        // dht_get_humid();
         // vTaskDelay(20 / portTICK_PERIOD_MS);
-        getAllValues();
-        ESP_LOGI("i2c", "temperature: %d.%d °C", air.tempInt, air.tempDec);
-        ESP_LOGI("i2c", "humidity: %d.%d", air.humidInt, air.humidDec);
-        ESP_LOGI("i2c", "checksum: %d", air.checksum);
+        dht_get_all_values();
+        ESP_LOGI("i2c", "temperature: %d.%d °C", dht12.tempInt, dht12.tempDec);
+        ESP_LOGI("i2c", "humidity: %d.%d", dht12.humidInt, dht12.humidDec);
+        ESP_LOGI("i2c", "checksum: %d", dht12.checksum);
 
         // Delay 5 seconds
         vTaskDelay(5000 / portTICK_PERIOD_MS);
@@ -116,7 +116,7 @@ void vTaskLoop()
 
 
 /*-----------------------------------------------------------*/
-void getTemp()
+void dht_get_temp()
 {
     // Create and execute i2c commands list
     i2c_cmd_handle_t cmd = i2c_cmd_link_create();
@@ -125,8 +125,8 @@ void getTemp()
     i2c_master_write_byte(cmd, I2C_DHT_TEMP, true);
     i2c_master_start(cmd);
     i2c_master_write_byte(cmd, (I2C_DHT_ADDRESS<<1) | I2C_MASTER_READ, true);
-    i2c_master_read_byte(cmd, &air.tempInt, I2C_ACK);
-    i2c_master_read_byte(cmd, &air.tempDec, I2C_NACK);
+    i2c_master_read_byte(cmd, &dht12.tempInt, I2C_ACK);
+    i2c_master_read_byte(cmd, &dht12.tempDec, I2C_NACK);
     i2c_master_stop(cmd);
     i2c_master_cmd_begin(I2C_NUM_0, cmd, (1000 / portTICK_RATE_MS));
     i2c_cmd_link_delete(cmd);
@@ -134,7 +134,7 @@ void getTemp()
 
 
 /*-----------------------------------------------------------*/
-void getHumid()
+void dht_get_humid()
 {
     // Create and execute i2c commands list
     i2c_cmd_handle_t cmd = i2c_cmd_link_create();
@@ -143,8 +143,8 @@ void getHumid()
     i2c_master_write_byte(cmd, I2C_DHT_HUMID, true);
     i2c_master_start(cmd);
     i2c_master_write_byte(cmd, (I2C_DHT_ADDRESS<<1) | I2C_MASTER_READ, true);
-    i2c_master_read_byte(cmd, &air.humidInt, I2C_ACK);
-    i2c_master_read_byte(cmd, &air.humidDec, I2C_NACK);
+    i2c_master_read_byte(cmd, &dht12.humidInt, I2C_ACK);
+    i2c_master_read_byte(cmd, &dht12.humidDec, I2C_NACK);
     i2c_master_stop(cmd);
     i2c_master_cmd_begin(I2C_NUM_0, cmd, (1000 / portTICK_RATE_MS));
     i2c_cmd_link_delete(cmd);
@@ -152,7 +152,7 @@ void getHumid()
 
 
 /*-----------------------------------------------------------*/
-void getAllValues()
+void dht_get_all_values()
 {
     // Create and execute i2c commands list
     i2c_cmd_handle_t cmd = i2c_cmd_link_create();
@@ -161,11 +161,11 @@ void getAllValues()
     i2c_master_write_byte(cmd, I2C_DHT_HUMID, true);
     i2c_master_start(cmd);
     i2c_master_write_byte(cmd, (I2C_DHT_ADDRESS<<1) | I2C_MASTER_READ, true);
-    i2c_master_read_byte(cmd, &air.humidInt, I2C_ACK);
-    i2c_master_read_byte(cmd, &air.humidDec, I2C_ACK);
-    i2c_master_read_byte(cmd, &air.tempInt, I2C_ACK);
-    i2c_master_read_byte(cmd, &air.tempDec, I2C_ACK);
-    i2c_master_read_byte(cmd, &air.checksum, I2C_NACK);
+    i2c_master_read_byte(cmd, &dht12.humidInt, I2C_ACK);
+    i2c_master_read_byte(cmd, &dht12.humidDec, I2C_ACK);
+    i2c_master_read_byte(cmd, &dht12.tempInt, I2C_ACK);
+    i2c_master_read_byte(cmd, &dht12.tempDec, I2C_ACK);
+    i2c_master_read_byte(cmd, &dht12.checksum, I2C_NACK);
     i2c_master_stop(cmd);
     i2c_master_cmd_begin(I2C_NUM_0, cmd, (1000 / portTICK_RATE_MS));
     i2c_cmd_link_delete(cmd);
