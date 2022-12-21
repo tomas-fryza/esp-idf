@@ -144,9 +144,8 @@ esp_err_t http_event_handler(esp_http_client_event_handle_t evt)
 void HttpClientTask()
 {
     esp_http_client_config_t config = {
-        // .url = "http://worldclockapi.com/api/json/utc/now",
         .url = "http://httpbin.org/get",
-        // .url = "http://api.thingspeak.com/update?api_key=YOUR_WRITE_API_KEY&field1=YOUR_VALUE",
+        // .url = "http://worldclockapi.com/api/json/utc/now",
         .method = HTTP_METHOD_GET,
         .cert_pem = NULL,
         .event_handler = http_event_handler
