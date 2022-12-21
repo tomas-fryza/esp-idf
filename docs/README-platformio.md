@@ -9,7 +9,7 @@
    2. Type `platformio` into the search bar.
    3. Press **Install** button on the result `PlatformIO IDE`. It may take a few minutes depending on your connection speed. Do not close any window and do not open other folders until the installing process is completed.
 
-      ![Install PlatformIO IDE](images/platformio_install.png)
+      ![Install PlatformIO IDE](../images/platformio_install.png)
 
    4. After that, restart the Visual Studio Code application.
 
@@ -20,14 +20,14 @@
    2. In menu **PIO Home** select **Open**.
    3. Click to **New Project** button.
    
-      ![Create a new project](images/platformio_new_project.png)
+      ![Create a new project](../images/platformio_new_project.png)
    
    4. In project wizard, type `gpio` as project name.
    5. Select ESP32 board you have.
    6. Change framework to `Espressif IoT Development Framework` and select location to your working folder.
    7. Click on the **Finish** button. The creation of first project may takes a few minutes and internet connection to download the needed libraries and frameworks is mandatory.
 
-      ![Create a new project](images/platformio_project_name.png)
+      ![Create a new project](../images/platformio_project_name.png)
 
 2. Code the application:
    1. Copy/paste the [basic template](https://raw.githubusercontent.com/tomas-fryza/esp-idf-thingspeak/main/examples/gpio/src/main.c) to your `GPIO > src > main.c` file.
@@ -48,7 +48,7 @@
 
    4. Compile and upload the code. The handy shortcuts for building and uploading the code is available on the blue footer taskbar. Hover over the icon to get its functionality. First, compile (build) the project and then upload it to ESP32 board. Open the Serial monitor. (At some platforms you have to press on-board reset button.)
 
-      ![Control icons](images/platformio_footer2.png)
+      ![Control icons](../images/platformio_footer2.png)
 
 ## Tested on operating systems
 
