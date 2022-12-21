@@ -7,6 +7,7 @@ ESP-IDF is Espressif's official [IoT Development Framework](https://www.espressi
 * [ESP32 brief overview](https://www.youtube.com/watch?v=DoctWoxIaH8)
 * [PlatformIO installation and first ESP-IDF project](README-platformio.md)
 * [Git commands](README-useful-git-commands.md)
+- [ ] How to program ESP32-CAM board via Arduino Uno
 
 ## Examples (PlatformIO)
 
