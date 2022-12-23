@@ -27,7 +27,7 @@ ESP-IDF is Espressif's official [IoT Development Framework](https://www.espressi
 - [ ] Bluetooth
 - [ ] Wi-Fi GET requests to HTTPs
 - [ ] Wi-Fi & AWS
-- [ ] ADC
+- [ ] ADC, DAC
 - [ ] CAN
 - [ ] IR
 - [ ] SHA
