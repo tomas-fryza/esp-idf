@@ -121,8 +121,12 @@ void app_main(void)
         for (uint8_t i = 0; i < ap_num; i++) {
             ESP_LOGI(TAG, "SSID \t%s", ap_records[i].ssid);
             ESP_LOGI(TAG, "MAC of AP\t%2x:%2x:%2x:%2x:%2x:%2x",
-                *ap_records[i].bssid, *(ap_records[i].bssid+1), *(ap_records[i].bssid+2),
-                *(ap_records[i].bssid+3), *(ap_records[i].bssid+4), *(ap_records[i].bssid+5));
+                *ap_records[i].bssid,
+                *(ap_records[i].bssid+1),
+                *(ap_records[i].bssid+2),
+                *(ap_records[i].bssid+3),
+                *(ap_records[i].bssid+4),
+                *(ap_records[i].bssid+5));
             ESP_LOGI(TAG, "RSSI \t%3d dBm", ap_records[i].rssi);
             print_auth_mode(ap_records[i].authmode);
             ESP_LOGI(TAG, "Channel \t%d\n", ap_records[i].primary);

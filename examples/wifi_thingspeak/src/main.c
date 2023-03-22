@@ -24,6 +24,7 @@
 #include <esp_netif.h>
 #include <esp_http_client.h>
 #include <my_data.h>
+#include <driver/gpio.h>        // GPIO pins
 #include <driver/i2c.h>         // Inter-Integrated Circuit driver
 #include <stdio.h>              // sprintf() function
 
@@ -268,6 +269,7 @@ void app_main(void)
     // GPIO
     gpio_reset_pin(BUILT_IN_LED);
     gpio_set_direction(BUILT_IN_LED, GPIO_MODE_OUTPUT);
+    gpio_set_level(BUILT_IN_LED, 0);
 
     // I2C
     i2c_setup();
