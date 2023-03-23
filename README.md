@@ -21,7 +21,7 @@ Command | Description
 
 * [How to install and use ESP32 ESP-IDF in PlatformIO](docs/README-platformio.md)
 
-### Examples
+### PlatformIO examples
 
 * [x] [Basic template with GPIO](examples/gpio)
 * [x] [Logging methods](examples/log_methods)
