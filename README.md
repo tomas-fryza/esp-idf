@@ -5,7 +5,8 @@ ESP-IDF is Espressif's official [IoT Development Framework](https://www.espressi
 ## Instructions
 
 * [ESP32 brief overview](https://www.youtube.com/watch?v=DoctWoxIaH8) (YouTube video)
-* [PlatformIO installation and the first ESP-IDF project](docs/README-platformio.md)
+* [How to install and use ESP-IDF in PlatformIO](docs/README-platformio.md)
+* [How to install and use ESP-IDF in VS Code for Windows](https://esp32tutorials.com/install-esp32-esp-idf-windows-integrate-vs-code/)
 * [Git commands](docs/README-useful-git-commands.md)
 * [ ] ESP32 structure, versions
 * [ ] Pinout of ESP32-CAM board
