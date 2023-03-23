@@ -1,5 +1,3 @@
-# Useful git commands to remember
-
 | **Command** | **Example** | **Description** |
 | :-: | :-- | :-- |
 | `clone`  | `git clone https://github.com/tomas-fryza/esp-idf` | Create a local copy of a remote repository |
@@ -14,15 +12,20 @@
 | `merge` | `git merge` | Approves merge changes with local repository |
 | `log`    | `git log --summary` | View detailed changes |
 |          | `git log --oneline` | View changes (briefly) |
-| `branch` | `git branch -a` | List all local and remote branches (asterisk denotes the current branch) |
-|          | `git branch -d <existing_branch>` | Delete branch |
-| `checkout` | `git checkout <existing_branch>` | Switch branch |
-|            | `git checkout -b <new_branch>` | Switch to new branch |
-|            | `git checkout master` <br /> `git merge <existing_branch>` | Update main branch with branch's changes |
 
 ![git](../images/git_basics.png)
 
 A detailed description of all git commands can be found [here](https://github.com/joshnh/Git-Commands).
+
+## Using branches
+| **Command** | **Example** | **Description** |
+| :-: | :-- | :-- |
+| `branch` | `git branch -a` | List all local and remote branches (asterisk denotes the current branch) |
+|          | `git branch -d <existing_local_branch>` | Delete local branch |
+|          | `git push origin --delete <existing_remote_branch>` | Delete remote branch |
+| `checkout` | `git checkout <existing_branch>` | Switch branch |
+|            | `git checkout -b <new_branch>` | Switch to new branch |
+|            | `git checkout master` <br /> `git merge <existing_branch>` | Update main branch with branch's changes |
 
 ## Useful settings
 
