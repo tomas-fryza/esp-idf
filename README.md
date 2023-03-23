@@ -2,11 +2,15 @@
 
 ESP-IDF is Espressif's official [IoT Development Framework](https://www.espressif.com/en/products/sdks/esp-idf) for the ESP32, ESP32-S, ESP32-C and ESP32-H series of SoCs. It provides a self-sufficient Software Development Kit (SDK) for any generic application development on these platforms, using programming languages such as C and C++.
 
+## Installation
+
+* [How to install and use ESP32 ESP-IDF in PlatformIO](docs/README-platformio.md)
+* [How to install and use ESP32 ESP-IDF in VS Code for Windows](https://esp32tutorials.com/install-esp32-esp-idf-windows-integrate-vs-code/)
+* [ ] How to configure ESP32 ESP-IDF in Linux
+
 ## Instructions
 
 * [ESP32 brief overview](https://www.youtube.com/watch?v=DoctWoxIaH8) (YouTube video)
-* [How to install and use ESP-IDF in PlatformIO](docs/README-platformio.md)
-* [How to install and use ESP-IDF in VS Code for Windows](https://esp32tutorials.com/install-esp32-esp-idf-windows-integrate-vs-code/)
 * [Git commands](docs/README-useful-git-commands.md)
 * [ ] ESP32 structure, versions
 * [ ] Pinout of ESP32-CAM board
