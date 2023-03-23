@@ -1,3 +1,4 @@
+# Useful Git commands
 | **Command** | **Example** | **Description** |
 | :-: | :-- | :-- |
 | `clone`  | `git clone https://github.com/tomas-fryza/esp-idf` | Create a local copy of a remote repository |
