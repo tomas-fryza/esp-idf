@@ -4,9 +4,9 @@ ESP-IDF is Espressif's official [IoT Development Framework](https://www.espressi
 
 ## Installation
 
-* [How to install and use ESP32 ESP-IDF in PlatformIO](docs/README-platformio.md)
 * [How to install and use ESP32 ESP-IDF in VS Code for Windows](https://esp32tutorials.com/install-esp32-esp-idf-windows-integrate-vs-code/)
 * [ ] How to configure ESP32 ESP-IDF in Linux
+* [How to install and use ESP32 ESP-IDF in PlatformIO](docs/README-platformio.md)
 
 ## Instructions
 
