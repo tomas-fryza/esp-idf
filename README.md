@@ -8,6 +8,7 @@ ESP-IDF is Espressif's official [IoT Development Framework](https://www.espressi
 * [ ] How to configure ESP-IDF in Linux
 
 ### Useful commands in VS Code
+
 Command | Description
 :-- | :--
 `F1` | Command Palette where all commands are found
@@ -24,14 +25,17 @@ Command | Description
 
 ### PlatformIO examples
 
-* [x] [Basic template with GPIO](examples/gpio)
-* [x] [Logging methods](examples/log_methods)
-* [x] [Tasks](examples/tasks)
-* [x] [I2C scan](examples/i2c_scan)
-* [x] [I2C DHT12 sensor](examples/i2c_sensor)
-* [x] [Wi-Fi APs scan](examples/wifi_scan)
-* [x] [Wi-Fi GET requests to HTTP](examples/wifi_get_requests)
-* [x] [Wi-Fi & DHT12 & ThingSpeak](examples/wifi_thingspeak)
+* [Basic template with GPIO](examples/gpio)
+* [Logging methods](examples/log_methods)
+* [Tasks](examples/tasks)
+* [I2C scan](examples/i2c_scan)
+* [I2C DHT12 sensor](examples/i2c_sensor)
+* [Wi-Fi APs scan](examples/wifi_scan)
+* [Wi-Fi GET requests to HTTP](examples/wifi_get_requests)
+* [Wi-Fi & DHT12 & ThingSpeak](examples/wifi_thingspeak)
+
+**TODO:**
+
 * [ ] Timer(s), PWM
 * [ ] SPI
 * [ ] Bluetooth
@@ -42,14 +46,13 @@ Command | Description
 * [ ] IR
 * [ ] SHA
 
-## General information
+## Useful information
 
 * [ESP32 brief overview](https://www.youtube.com/watch?v=DoctWoxIaH8) (YouTube video)
 * [Git commands](docs/README-useful-git-commands.md)
+* [ESP32-CAM board](docs/esp32-cam.md)
+* [FireBeetle board](docs/firebeetle.md)
 * [ ] ESP32 structure, versions
-* [ ] Pinout of ESP32-CAM board
-* [ ] Pinout of FireBeetle board
-* [ ] How to program ESP32-CAM board via Arduino Uno
 
 ## References
 
