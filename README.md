@@ -12,6 +12,7 @@ ESP-IDF is Espressif's official [IoT Development Framework](https://www.espressi
 Command | Description
 :-- | :--
 `F1` | Command Palette where all commands are found
+`F1` `ESP-IDF: New project` | Create a new project via Command Palette
 `Ctrl+E T` | Open ESP-IDF Terminal where you can use `idf.py` command-line tool
 `idf.py create-project NAME` | Create a new project titled `NAME`
 `idf.py menuconfig` | Open project configuration
