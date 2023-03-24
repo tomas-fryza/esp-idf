@@ -2,10 +2,10 @@
 
 ESP-IDF is Espressif's official [IoT Development Framework](https://www.espressif.com/en/products/sdks/esp-idf) for the ESP32, ESP32-S, ESP32-C and ESP32-H series of SoCs. It provides a self-sufficient Software Development Kit (SDK) for any generic application development on these platforms, using programming languages such as C and C++.
 
-## ESP-IDF VS Code extension
+## Use with VS Code
 
-* [How to install and use ESP32 ESP-IDF in VS Code for Windows](https://esp32tutorials.com/install-esp32-esp-idf-windows-integrate-vs-code/)
-* [ ] How to configure ESP32 ESP-IDF in Linux
+* [How to integrate ESP-IDF with VS Code for Windows](https://esp32tutorials.com/install-esp32-esp-idf-windows-integrate-vs-code/)
+* [ ] How to configure ESP-IDF in Linux
 
 ### Useful commands in VS Code
 Command | Description
@@ -55,6 +55,8 @@ Command | Description
 
 1. Espressif Systems. [ESP-IDF Programming Guide](https://docs.espressif.com/projects/esp-idf/en/latest/esp32/)
 
-2. [ESP32 for IoT: A Complete Guide](https://www.nabto.com/guide-to-iot-esp-32/)
+2. Esp32 Tutorials. [Install ESP32 ESP-IDF on Windows and Integrate with VS code](https://esp32tutorials.com/install-esp32-esp-idf-windows-integrate-vs-code/)
 
-3. [How To Choose The Best RTOS for IoT Devices](https://www.nabto.com/how-to-choose-best-rtos-for-iot/)
+3. [ESP32 for IoT: A Complete Guide](https://www.nabto.com/guide-to-iot-esp-32/)
+
+4. [How To Choose The Best RTOS for IoT Devices](https://www.nabto.com/how-to-choose-best-rtos-for-iot/)
