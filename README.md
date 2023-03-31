@@ -5,7 +5,12 @@ ESP-IDF is Espressif's official [IoT Development Framework](https://www.espressi
 ## Use with VS Code
 
 * [How to integrate ESP-IDF with VS Code for Windows](https://esp32tutorials.com/install-esp32-esp-idf-windows-integrate-vs-code/)
-* [ ] How to configure ESP-IDF in Linux
+
+* [Installation on Linux and Windows](https://github.com/espressif/vscode-esp-idf-extension/blob/master/docs/tutorial/install.md)
+
+* See how to [build your first project](https://docs.espressif.com/projects/esp-idf/en/latest/esp32/get-started/index.html#build-your-first-project) from the commannd line on Windows, Linux, or macOS.
+
+* Description of all ESP-IDF development tools can be found [here](https://blog.espressif.com/esp-idf-development-tools-guide-part-i-89af441585b).
 
 ### Useful commands in VS Code
 
@@ -64,8 +69,12 @@ Command | Description
 
 3. [ESP32 for IoT: A Complete Guide](https://www.nabto.com/guide-to-iot-esp-32/)
 
-4. Random Nerd Tutorials. [ESP32-CAM AI-Thinker Pinout Guide: GPIOs Usage Explained](https://randomnerdtutorials.com/esp32-cam-ai-thinker-pinout/)
+4. Pedro Minatel. [ESP-IDF Development Tools Guide — Part I](https://blog.espressif.com/esp-idf-development-tools-guide-part-i-89af441585b)
 
-5. Renzo Mischianti. [ESP32-CAM: pinout, specs and Arduino IDE configuration – 1](https://www.mischianti.org/2021/08/30/esp32-cam-pinout-specs-and-arduino-ide-configuration-1/)
+5. Espressif Systems. [Build Your First Project](https://docs.espressif.com/projects/esp-idf/en/latest/esp32/get-started/index.html#build-your-first-project)
 
-6. [How To Choose The Best RTOS for IoT Devices](https://www.nabto.com/how-to-choose-best-rtos-for-iot/)
+6. Random Nerd Tutorials. [ESP32-CAM AI-Thinker Pinout Guide: GPIOs Usage Explained](https://randomnerdtutorials.com/esp32-cam-ai-thinker-pinout/)
+
+7. Renzo Mischianti. [ESP32-CAM: pinout, specs and Arduino IDE configuration – 1](https://www.mischianti.org/2021/08/30/esp32-cam-pinout-specs-and-arduino-ide-configuration-1/)
+
+8. [How To Choose The Best RTOS for IoT Devices](https://www.nabto.com/how-to-choose-best-rtos-for-iot/)
