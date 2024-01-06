@@ -86,7 +86,7 @@
 
 ### Espressif
 
-* [Hello world](examples-espressif/hello)
+* [Hello world](examples-espressif/hello_world)
 
 ### PlatformIO
 
