@@ -20,7 +20,7 @@
   > `ESP-IDF: Set Espressif device target` | Select your Espressif target (esp32, esp32s2, etc.)
   > `ESP-IDF: Build your project` | Build the project
   > `ESP-IDF: Build, Flash, and start a monitor on your device` | Combine build, flash and serial monitor in a single command
-  > |
+  > |||
   > `ESP-IDF: Open ESP-IDF Terminal` | Open ESP-IDF Terminal where you can use `idf.py` command-line tool
   > `idf.py create-project NAME` | Create a new project titled `NAME` in ESP-IDF Terminal
   > `idf.py menuconfig` | Open project configuration
@@ -86,7 +86,7 @@
 
 ### Espressif
 
-* [Hello world](examples-espressif/hello)
+* [Hello world](examples-espressif/hello_world)
 
 ### PlatformIO
 
