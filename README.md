@@ -1,10 +1,25 @@
-# ESP-IDF examples
+# ESP32 projects in C/C++
 
-## Installation ESP-IDF with VS Code
+Espressif IDF and PlatformIO extensions are popular choices for developing ESP32 projects in C/C++ using Visual Studio Code. Each has its own strengths and weaknesses, so the best choice for you will depend on your specific needs and preferences.
 
-*ESP-IDF is Espressif's official [IoT Development Framework](https://www.espressif.com/en/products/sdks/esp-idf) for the ESP32, ESP32-S, ESP32-C and ESP32-H series of SoCs. It provides a self-sufficient Software Development Kit (SDK) for any generic application development on these platforms, using programming languages such as C and C++.*
+**Espressif IDF** ([IoT Development Framework](https://www.espressif.com/en/products/sdks/esp-idf)) is the official development framework from Espressif Systems, the manufacturer of the ESP32 microcontroller. It is a very powerful and flexible framework, but it can also be quite complex to use, especially for beginners. The IDF provides a lot of low-level control over the ESP32, but it can be difficult to manage all of the configuration options and build processes. It provides a self-sufficient Software Development Kit (SDK) for any generic application development on these platforms, using programming languages such as C and C++.
 
 ![logo-espressif-idf](images/logo_espressif-idf.png)
+
+**[PlatformIO](https://platformio.org/)** is a more user-friendly alternative to the IDF. It is a build system that can manage the compilation and flashing of ESP32 projects, as well as providing a variety of other features, such as integrated debugging support. PlatformIO supports a wide range of microcontrollers, including the ESP32, Arduino, STM32, AVR, and it has a large community of users. It can be used with VS Code to provide a powerful set of tools [to assist you in development](https://dronebotworkshop.com/platformio/).
+
+![logo-platformio](images/logo_platformio.png)
+
+| Feature | Espressif IDF | PlatformIO |
+| :-- | :-- | :-- |
+Official framework | Yes | No
+Power and flexibility | High | Medium
+User friendliness | Low | High
+Ease of use | Low | High
+Documentation | Good | Good
+Community support | Medium | Large
+
+## Installation of Espressif IDF with VS Code
 
 1. Follow these instructions: [Installation on Linux and Windows](https://github.com/espressif/vscode-esp-idf-extension/blob/master/docs/tutorial/install.md) and install `Espressif IDF` extension.
 
@@ -30,11 +45,7 @@
   >
   > Other common [shortcuts in VS Code](https://code.visualstudio.com/shortcuts/keyboard-shortcuts-windows.pdf).
 
-## Installation with PlatformIO
-
-*[PlatformIO](https://platformio.org/) is a cross-platform build system that can be used to develop software platforms for Arduino, ESP32, PIC32, and AVR. PlatformIO can be used with VS Code to provide a powerful set of tools [to assist you in development](https://dronebotworkshop.com/platformio/).*
-
-![logo-platformio](images/logo_platformio.png)
+## Installation and usage of PlatformIO
 
 1. Download and install [Visual Studio Code](https://code.visualstudio.com/) source code editor.
 
