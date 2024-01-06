@@ -19,7 +19,7 @@ Community support | Medium | Large
 
 ![logo-espressif-idf](images/logo_espressif-idf.png)
 
-1. Follow these instructions: [Installation on Linux and Windows](https://github.com/espressif/vscode-esp-idf-extension/blob/master/docs/tutorial/install.md) and install `Espressif IDF` extension.
+1. Follow these instructions: [Installation on Linux and Windows](https://github.com/espressif/vscode-esp-idf-extension/blob/master/docs/tutorial/install.md) and install Espressif IDF extension.
 
 2. It is recommended to start by an example project. See how to [create, build, and run your first project](https://github.com/espressif/vscode-esp-idf-extension/blob/master/docs/tutorial/basic_use.md)
 
