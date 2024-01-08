@@ -95,7 +95,7 @@ Community support | Medium | Large
 
 ## Examples
 
-### Espressif
+### Espressif IDF
 
 * [Hello world](examples-espressif/hello_world)
 
