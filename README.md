@@ -21,7 +21,7 @@ Community support | Medium | Large
 
 1. Follow these instructions: [Installation on Linux and Windows](https://github.com/espressif/vscode-esp-idf-extension/blob/master/docs/tutorial/install.md) and install Espressif IDF extension.
 
-2. It is recommended to start by an example project. See how to [create, build, and run your first project](https://github.com/espressif/vscode-esp-idf-extension/blob/master/docs/tutorial/basic_use.md)
+2. It is recommended to start by an example project. See how to [create, build, and run your first project](https://github.com/espressif/vscode-esp-idf-extension/blob/master/docs/tutorial/basic_use.md).
 
   > **NOTE:** Please note that all available commands are accessible in VS Code in menu **View > Command Palette...** or by `Ctrl+Shift+P` shortcut, followed by a command `ESP-IDF: `
   >
