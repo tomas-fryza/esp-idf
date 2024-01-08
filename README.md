@@ -95,20 +95,24 @@ Community support | Medium | Large
 
 ## Examples
 
-### Espressif IDF
+1. For Espressif IDF
 
-* [Hello world](examples-espressif/hello_world)
+  * [Hello world](examples-espressif/hello_world)
+  * [Remote control](https://gitlab.com/tbravenec/but_de2_esp32_exercises/-/tree/master/labs/01-http_led_control_ESP-IDF) of LED through HTTP server by [tbravenec](https://gitlab.com/tbravenec)
+  * [Introduction to FreeRTOS](https://gitlab.com/tbravenec/but_de2_esp32_exercises/-/tree/master/labs/02-rtos_blink_task_ESP-IDF) using LED blinking task by [tbravenec](https://gitlab.com/tbravenec)
 
-### PlatformIO
+2. For PlatformIO
 
-* [Basic template with GPIO](examples-platformio/gpio)
-* [Logging methods](examples-platformio/log_methods)
-* [Tasks](examples-platformio/tasks)
-* [I2C scan](examples-platformio/i2c_scan)
-* [I2C DHT12 sensor](examples-platformio/i2c_sensor)
-* [Wi-Fi APs scan](examples-platformio/wifi_scan)
-* [Wi-Fi GET requests to HTTP](examples-platformio/wifi_get_requests)
-* [Wi-Fi & DHT12 & ThingSpeak](examples-platformio/wifi_thingspeak)
+  * [Basic template with GPIO](examples-platformio/gpio)
+  * [Logging methods](examples-platformio/log_methods)
+  * [Tasks](examples-platformio/tasks)
+  * [I2C scan](examples-platformio/i2c_scan)
+  * [I2C DHT12 sensor](examples-platformio/i2c_sensor)
+  * [Wi-Fi APs scan](examples-platformio/wifi_scan)
+  * [Wi-Fi GET requests to HTTP](examples-platformio/wifi_get_requests)
+  * [Wi-Fi & DHT12 & ThingSpeak](examples-platformio/wifi_thingspeak)
+  * [Remote control](https://gitlab.com/tbravenec/but_de2_esp32_exercises/-/tree/master/labs/01-http_led_control_PlatformIO) of LED through HTTP server by [tbravenec](https://gitlab.com/tbravenec)
+  * [Introduction to FreeRTOS](https://gitlab.com/tbravenec/but_de2_esp32_exercises/-/tree/master/labs/02-rtos_blink_task_PlatformIO) using LED blinking task by [tbravenec](https://gitlab.com/tbravenec)
 
 ### Tested on
 
