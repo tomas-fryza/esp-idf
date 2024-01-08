@@ -1,10 +1,8 @@
 # ESP32 projects in C/C++
 
-**Espressif IDF** and **PlatformIO** extensions are popular choices for developing ESP32 projects in C/C++ using Visual Studio Code. Each has its own strengths and weaknesses, so the best choice for you will depend on your specific needs and preferences.
+**Espressif IDF** and **PlatformIO** extensions are popular choices for developing ESP32 projects in C/C++ using Visual Studio Code. [Espressif IDF](https://docs.espressif.com/projects/esp-idf/en/latest/esp32/get-started/) (IoT Development Framework) is the official development framework from Espressif Systems, the manufacturer of the ESP32 microcontroller. It is a very powerful and flexible framework, but it can also be quite complex to use, especially for beginners.
 
-[Espressif IDF](https://docs.espressif.com/projects/esp-idf/en/latest/esp32/get-started/) (IoT Development Framework) is the official development framework from Espressif Systems, the manufacturer of the ESP32 microcontroller. It is a very powerful and flexible framework, but it can also be quite complex to use, especially for beginners. The IDF provides a lot of low-level control over the ESP32, but it can be difficult to manage all of the configuration options and build processes. It provides a self-sufficient Software Development Kit (SDK) for any generic application development on these platforms, using programming languages such as C and C++.
-
-[PlatformIO](https://platformio.org/) is a more user-friendly alternative to the IDF. It is a build system that can manage the compilation and flashing of ESP32 projects, as well as providing a variety of other features, such as integrated debugging support. PlatformIO supports a wide range of microcontrollers, including the ESP32, Arduino, STM32, AVR, and it has a large community of users. It can be used with VS Code to provide a powerful set of tools [to assist you in development](https://dronebotworkshop.com/platformio/).
+[PlatformIO](https://platformio.org/) is a more user-friendly alternative to the IDF. It is a build system that can manage the compilation and flashing of ESP32 projects (but also Arduino, STM32, AVR, ...), as well as providing a variety of other features, such as integrated debugging support.
 
 | Feature | Espressif IDF | PlatformIO |
 | :-- | :-- | :-- |
