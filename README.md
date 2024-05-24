@@ -66,7 +66,7 @@ Community support | Medium | Large
    4. In project wizard, type `gpio` as project name.
    5. Select ESP32 board you have.
    6. Change framework to `Espressif IoT Development Framework` and select location to your working folder.
-   7. Click on the **Finish** button. The creation of first project may takes a few minutes and internet connection to download the needed libraries and frameworks is mandatory.
+   7. Click on the **Finish** button. The creation of the first project may takes a few minutes and the internet connection to download the needed libraries and frameworks is mandatory.
 
       ![Create a new project](images/platformio_project_name.png)
 
