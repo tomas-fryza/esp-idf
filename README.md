@@ -85,7 +85,7 @@ Community support | Medium | Large
       monitor_raw = yes
       ```
 
-   3. Connect your ESP32 board to USB port.
+   3. Connect your ESP32 board to USB port. (Mac users may need to install USB drivers, such as [CH340](https://github.com/WCHSoftGroup/ch34xser_macos).)
 
    4. Compile and upload the code. The handy shortcuts for building and uploading the code is available on the [blue footer taskbar](https://envirodiy.github.io/LearnEnviroDIY/04-GetPlatformIO/index.html). Hover over the icon to get its functionality. First, compile (build) the project and then upload it to ESP32 board. Open the Serial monitor. (At some platforms you have to press on-board reset button.)
 
